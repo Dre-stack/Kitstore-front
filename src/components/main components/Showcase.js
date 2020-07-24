@@ -28,7 +28,7 @@ export class Showcase extends Component {
           <div className="showcase__cta">
             <div className="showcase__cta-text">
               <h1>
-                Shop Exclusive <br /> KIT Merch
+                Shop Exclusive <br /> KIT Merch Now
               </h1>
               <h3>join the royal army</h3>
             </div>
