@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactImageMagnify from 'react-image-magnify';
-const url = 'http://localhost:3001/img/products';
+import { pictureFromServer as url } from '../../utils/apiLinks';
 
 const ProductImage = ({ product }) => {
   const getImageSrc = () => {

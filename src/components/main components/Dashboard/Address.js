@@ -219,7 +219,7 @@ const Addresses = ({ user, loadUser, history }) => {
             <React.Fragment>
               {user.address.map((item) => (
                 <div className="center-contents m1rem address-card">
-                  <h2>{item.alias.toUpperCase()}</h2>
+                  <h2>{item.alias && item.alias.toUpperCase()}</h2>
                   <h3>
                     {item.firstname} {item.lastname}
                   </h3>

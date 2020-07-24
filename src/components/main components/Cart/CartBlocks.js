@@ -1,6 +1,5 @@
 import React from 'react';
-
-const url = 'http://localhost:3001/img/products';
+import { pictureFromServer as url } from '../../utils/apiLinks';
 
 const CartBlocks = ({
   list,
