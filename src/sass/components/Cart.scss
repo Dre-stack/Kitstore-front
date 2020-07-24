@@ -1,0 +1,128 @@
+.cart {
+  position: relative;
+  top: 6rem;
+  padding: 4rem 3rem;
+  display: flex;
+  &-main {
+    max-width: 70vw;
+  }
+  &__top {
+    display: flex;
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 1.6rem;
+    border-bottom: 1px solid #dbdbdb;
+    text-transform: capitalize;
+    padding-bottom: 2rem;
+
+    &--left {
+      width: 30%;
+    }
+    &--right {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      width: 70%;
+      margin-left: 3rem;
+      // justify-content: space-between;
+    }
+  }
+  &-block {
+    font-family: 'futuria-light', sans-serif;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    border-bottom: 1px solid #dbdbdb;
+    padding-bottom: 2rem;
+    &__buttons {
+      background: none;
+      border: 1px solid #dbdbdb;
+      padding: 0.2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      &:hover {
+        color: rgba($color: #000000, $alpha: 0.5);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__left {
+      width: 30%;
+      display: flex;
+
+      &-image {
+        background-color: #dbdbdb;
+        margin-right: 2rem;
+        & img {
+          width: 10rem;
+        }
+      }
+    }
+    &__right {
+      width: 70%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      margin-left: 3rem;
+      &-quantity {
+        display: flex;
+        max-width: 10rem;
+        justify-content: flex-start;
+        // & > button {
+        //   background: none;
+        //   border: 1px solid #dbdbdb;
+        //   padding: 0.2rem;
+        //   font-size: 1.2rem;
+        //   color: rgba($color: #000000, $alpha: 0.6);
+        //   cursor: pointer;
+        // }
+        & > * {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
+  &-sum {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 4rem;
+    // align-items: center;
+  }
+  &-total {
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 2rem;
+    display: flex;
+    padding: 3rem 4rem;
+    justify-content: space-between;
+    border-bottom: 1px solid #dbdbdb;
+  }
+  &-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+
+    & .btn:first-child {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-empty {
+    width: 100%;
+    padding: 5rem 0;
+    font-size: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    & div {
+      margin-bottom: 4rem;
+    }
+  }
+}

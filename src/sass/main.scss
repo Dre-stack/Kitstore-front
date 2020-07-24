@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'futuria-medium';
+  src: url('./../fonts/FuturaPTCondBook.otf');
+}
+@font-face {
+  font-family: 'proxima-nova';
+  src: url('./../fonts/Proxima\ Nova\ Font.otf');
+}
+@font-face {
+  font-family: 'futuria';
+  src: url('./../fonts/FuturaPTMediumOblique.otf');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'futuria-light';
+  src: url('./../fonts/FuturaPTLight.otf');
+}
+@font-face {
+  font-family: 'futuria';
+  src: url('./../fonts/FuturaPTLightOblique.otf');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'futuria-bold';
+  src: url('./../fonts/FuturaPTBold.otf');
+}
+
+@import './base/base.scss';
+@import './base/typography.scss';
+@import './abstracts/variables.scss';
+@import './components/Showcase.scss';
+@import './components/Header.scss';
+@import './components/button.scss';
+@import './components/Singnin.scss';
+@import './components/dashboard.scss';
+@import './components/highlight.scss';
+@import './components/ProductDetails.scss';
+@import './components/Footer.scss';
+@import './components/Shop.scss';
+@import './components/Cart.scss';
+@import './components/Checkout.scss';
+@import './base/utils.scss';
+@import './base/animations.scss';
+@import './abstracts/mixins.scss';

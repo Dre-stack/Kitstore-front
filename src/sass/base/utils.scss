@@ -1,0 +1,117 @@
+.margin-top-small {
+  margin-top: 1rem;
+}
+.full-width {
+  width: 100%;
+}
+
+.lh2 {
+  line-height: 2;
+}
+.margin-bottom-small {
+  margin-bottom: 2rem;
+}
+.pb1rem {
+  padding-bottom: 1rem;
+}
+.pb2rem {
+  padding-bottom: 2rem;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.small {
+  font-size: 1.4rem;
+  padding: 2rem 1rem;
+}
+.full-width {
+  width: 100%;
+}
+.half-width {
+  width: 50%;
+}
+.form-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+.text-input {
+  width: 100%;
+  margin: 0rem 1rem 2rem 0;
+  padding: 1.5rem 1rem;
+  border: 1px solid #dbdbdb;
+  font-family: 'proxima-nova' sans-serif;
+  &:focus {
+    outline: none;
+  }
+}
+
+.form-label {
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 1.6rem;
+  text-align: left;
+}
+
+.m1rem {
+  margin: 1rem;
+}
+.p1rem {
+  padding: 1rem;
+}
+.phalf {
+  padding: 0.5rem;
+}
+.mhalf {
+  margin: 0.5rem;
+}
+
+.message-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+.message {
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+}
+.message.success {
+  background-color: green;
+  color: white;
+}
+.message.error {
+  background-color: red;
+  color: white;
+}
+.select-input {
+  padding: 1.5rem 1rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+.si-small {
+  padding: 0.5rem;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.center-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p3rem {
+  padding: 3rem;
+}

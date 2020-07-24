@@ -1,0 +1,58 @@
+.showcase {
+  position: relative;
+  height: 100vh;
+  // z-index: -1;
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+
+    &-text {
+      font-size: 1.8rem;
+      font-family: 'futuria-light', sans-serif;
+      color: $brown-primary;
+      text-transform: uppercase;
+    }
+  }
+  &__slider {
+    &-image {
+      height: 100vh;
+
+      &--1 {
+        background: url('../../img/show1.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      &--2 {
+        background: url('../../img/show5.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      &--3 {
+        background: url('../../img/show\ 7.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      &--4 {
+        background: url('../../img/show\ 6.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      &--5 {
+        background: url('../../img/shirt1.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      &--6 {
+        background: url('../../img/show2.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      &--7 {
+        background: url('../../img/shirt2.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+}
