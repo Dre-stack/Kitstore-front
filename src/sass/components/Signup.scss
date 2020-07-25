@@ -1,0 +1,22 @@
+@import '../abstracts/mixins.scss';
+
+.signup {
+  max-width: 112rem;
+  padding: 4rem;
+  position: relative;
+  top: 6rem;
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+
+  &-form {
+    width: 60%;
+
+    @include respond(tab-port) {
+      width: 80%;
+    }
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+}

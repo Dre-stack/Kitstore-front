@@ -3,8 +3,41 @@ import DashboardLayout from './DashboardLayout';
 import { connect } from 'react-redux';
 import DashboardHeader from './DashboardHeader';
 import { updateUserPassword, loadUser } from '../../../actions';
+import { Field, reduxForm } from 'redux-form';
+import { SignOut } from '../../../actions';
 
-const ChangePassword = ({ user, loadUser, history }) => {
+const renderInput = ({
+  input,
+  label,
+  type,
+  meta: { error, touched },
+}) => {
+  const className = `signin__form-input ${
+    error && touched ? 'error' : ''
+  } `;
+  return (
+    <React.Fragment>
+      <label className="form-label full-width">{label}</label>
+      <input
+        autoComplete="off"
+        {...input}
+        type={type}
+        className="text-input full-width"
+      />
+      <div className="form-error">
+        {error && touched ? error : ''}
+      </div>
+    </React.Fragment>
+  );
+};
+
+const ChangePassword = ({
+  user,
+  loadUser,
+  handleSubmit,
+  history,
+  SignOut,
+}) => {
   const [data, setData] = useState({
     currentPassword: '',
     password: '',
@@ -40,20 +73,15 @@ const ChangePassword = ({ user, loadUser, history }) => {
     }
   };
 
-  const handleChange = (e) => {
-    const { value } = e.target;
-
-    setData({ ...data, [e.target.name]: value });
-  };
   const redirectToLogin = () => {
-    localStorage.removeItem('token');
+    SignOut();
     history.push('/signin');
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (values) => {
+    console.log(values);
 
-    updateUserPassword(data)
+    updateUserPassword(values)
       .then((data) => {
         setError({ ...error, errMsg: '', errStatus: false });
         setSuccess(true);
@@ -61,6 +89,7 @@ const ChangePassword = ({ user, loadUser, history }) => {
         setTimeout(redirectToLogin, 2000);
       })
       .catch((err) => {
+        console.log(err.response);
         setError({
           errStatus: true,
           errMsg: err.response.data.message,
@@ -70,48 +99,46 @@ const ChangePassword = ({ user, loadUser, history }) => {
   };
 
   const renderUserInfo = () => {
-    const { lastname, firstname, photo } = data;
     if (user) {
       return (
         <div className="user-profile">
-          <form onSubmit={handleSubmit} className="form-wrapper">
-            <label className="form-label full-width m1rem">
-              Current Password
-            </label>
-            <input
-              className="text-input"
-              name="currentPassword"
-              defaultValue={firstname}
-              onChange={(e) => handleChange(e)}
-              type="password"
-            />
-            <label className="form-label full-width m1rem">
-              New Password
-            </label>
-            <input
-              className="text-input"
-              name="password"
-              defaultValue={lastname}
-              onChange={(e) => handleChange(e)}
-              type="password"
-            />
-            <label className="form-label full-width m1rem">
-              Confirm New Password
-            </label>
-            <input
-              className="text-input"
-              name="confirmPassword"
-              onChange={(e) => handleChange(e)}
-              type="password"
-              required
-            />
-            <input
-              type="submit"
-              className="btn btn-type"
-              value="Update Password"
-            />
-          </form>
-          <div className="user-profile__action"></div>
+          {success ? (
+            renderSuccess()
+          ) : (
+            <React.Fragment>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="form-wrapper"
+                onBlur={() =>
+                  setError({ errMsg: '', errStatus: false })
+                }
+              >
+                <Field
+                  name="currentPassword"
+                  component={renderInput}
+                  label="Current Password"
+                  type="password"
+                />
+                <Field
+                  name="password"
+                  component={renderInput}
+                  label="New Password"
+                  type="password"
+                />
+                <Field
+                  name="confirmPassword"
+                  component={renderInput}
+                  label="Confirm Password"
+                  type="password"
+                />
+                <input
+                  type="submit"
+                  className="btn btn-type"
+                  value="Update Password"
+                />
+              </form>
+            </React.Fragment>
+          )}
         </div>
       );
     }
@@ -130,7 +157,25 @@ const ChangePassword = ({ user, loadUser, history }) => {
   );
 };
 
+const validate = (values) => {
+  const error = {};
+  if (values.password && values.password.length < 6) {
+    error.password = 'Please enter at least 6 characters';
+  }
+
+  if (values.password !== values.confirmPassword) {
+    error.confirmPassword = 'Passwords do not match';
+  }
+  return error;
+};
+
 const mapStateToProps = (state) => ({
   user: state.auth.user,
 });
-export default connect(mapStateToProps, { loadUser })(ChangePassword);
+
+export default connect(mapStateToProps, { loadUser, SignOut })(
+  reduxForm({
+    form: 'changePassword',
+    validate,
+  })(ChangePassword)
+);

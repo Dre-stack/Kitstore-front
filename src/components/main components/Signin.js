@@ -12,6 +12,26 @@ import Loader from '../utils/Loader';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 
+const renderInput = ({
+  input,
+  label,
+  type,
+  meta: { error, touched },
+}) => {
+  const className = `signin__form-input ${
+    error && touched ? 'error' : ''
+  } `;
+  return (
+    <div>
+      <label className="signin__form-label">{label}</label>
+      <input {...input} type={type} className={className} />
+      <div className="signin__form-error">
+        {error && touched ? error : ''}
+      </div>
+    </div>
+  );
+};
+
 const Signin = ({
   isSignedIn,
   error,
@@ -29,26 +49,6 @@ const Signin = ({
       history.replace(from);
     }
   }, [isSignedIn, from, history]);
-
-  const renderInput = ({
-    input,
-    label,
-    type,
-    meta: { error, touched },
-  }) => {
-    const className = `signin__form-input ${
-      error && touched ? 'error' : ''
-    } `;
-    return (
-      <div>
-        <label className="signin__form-label">{label}</label>
-        <input {...input} type={type} className={className} />
-        <div className="signin__form-error">
-          {error && touched ? error : ''}
-        </div>
-      </div>
-    );
-  };
 
   const onSubmit = (values) => {
     // setloading(true);

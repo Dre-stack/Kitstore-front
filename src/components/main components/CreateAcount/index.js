@@ -21,13 +21,18 @@ const renderInput = ({
     error && touched ? 'error' : ''
   } `;
   return (
-    <div>
-      <label className="signin__form-label">{label}</label>
-      <input autoComplete="off" {...input} type={type} className="" />
-      <div className="signin__form-error">
+    <React.Fragment>
+      <label className="form-label full-width">{label}</label>
+      <input
+        autoComplete="off"
+        {...input}
+        type={type}
+        className="text-input full-width"
+      />
+      <div className="form-error">
         {error && touched ? error : ''}
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
@@ -82,7 +87,7 @@ function CreateAcount({ isSignedIn, error, handleSubmit, signUp }) {
       lastname,
       address: addressDetails,
     };
-
+    window.scroll(0, 0);
     return signUp(formData);
   };
 
@@ -90,16 +95,15 @@ function CreateAcount({ isSignedIn, error, handleSubmit, signUp }) {
     <div>
       <Header />
       <PageTop title="Create Acount" />
-      <div className="">
+      <div className="signup center-contents">
         {loading ? (
           <div> Loading...</div>
         ) : (
-          <div className="form-wrapper">
-            <h1>Sign Up</h1>
+          <div className="signup-form">
             <form
               autoComplete="off"
               onSubmit={handleSubmit(submitSignUpForm)}
-              className="signin__form"
+              className="form-wrapper"
             >
               {renderSubmissionError()}
               <Field
@@ -174,22 +178,6 @@ function CreateAcount({ isSignedIn, error, handleSubmit, signUp }) {
                 value="Sign UP"
               />
             </form>
-            <Link
-              to="/user/forgotpassword"
-              className="signin__form-label links"
-            >
-              {' '}
-              Forgot Password?
-            </Link>
-            <div className="signin__form-label ">
-              Do you have an account?{' '}
-              <Link
-                to="user/register"
-                className="signin__form-label links"
-              >
-                Sign In
-              </Link>
-            </div>
           </div>
         )}
       </div>
@@ -204,6 +192,30 @@ const validate = (formValues) => {
   }
   if (!formValues.password) {
     errors.password = 'Please enter your password';
+  }
+  if (!formValues.confirmPassword) {
+    errors.confirmPassword = 'Please confirm your password';
+  }
+  if (formValues.password !== formValues.confirmPassword) {
+    errors.confirmPassword = 'Passwords do not match';
+  }
+  if (!formValues.country) {
+    errors.country = 'Please enter your country';
+  }
+  if (!formValues.region) {
+    errors.region = 'Please enter your region';
+  }
+  if (!formValues.phone) {
+    errors.phone = 'Please enter your phone number';
+  }
+  if (!formValues.address) {
+    errors.address = 'Please enter your address';
+  }
+  if (!formValues.firstname) {
+    errors.firstname = 'Please enter your firstname';
+  }
+  if (!formValues.lastname) {
+    errors.lastname = 'Please enter your lastname';
   }
   return errors;
 };

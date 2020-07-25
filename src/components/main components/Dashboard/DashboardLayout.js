@@ -4,8 +4,12 @@ import Footer from '../Footer';
 import PageTop from '../../utils/PageTop';
 import { connect } from 'react-redux';
 import DashboardNav from './DashboardNav';
+import { loadUser } from '../../../actions';
 
 export class DashboardLayout extends Component {
+  componentDidMount() {
+    this.props.loadUser();
+  }
   render() {
     return (
       <div>
@@ -26,4 +30,6 @@ const mapStateToProps = (state) => ({
   user: state.auth.user,
 });
 
-export default connect(mapStateToProps)(DashboardLayout);
+export default connect(mapStateToProps, { loadUser })(
+  DashboardLayout
+);

@@ -42,8 +42,8 @@
 }
 .text-input {
   width: 100%;
-  margin: 0rem 1rem 2rem 0;
-  padding: 1.5rem 1rem;
+  margin: 0rem 1rem 1rem 0;
+  padding: 1rem 0.5rem;
   border: 1px solid #dbdbdb;
   font-family: 'proxima-nova' sans-serif;
   &:focus {
@@ -53,8 +53,17 @@
 
 .form-label {
   font-family: 'proxima-nova', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   text-align: left;
+  margin-bottom: 0.5rem;
+}
+.form-error {
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  color: $red-primary;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .m1rem {

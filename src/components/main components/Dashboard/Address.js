@@ -217,8 +217,11 @@ const Addresses = ({ user, loadUser, history }) => {
         <div className="center-contents  ">
           {user.address.length > 0 ? (
             <React.Fragment>
-              {user.address.map((item) => (
-                <div className="center-contents m1rem address-card">
+              {user.address.map((item, i) => (
+                <div
+                  key={i}
+                  className="center-contents m1rem address-card"
+                >
                   <h2>{item.alias && item.alias.toUpperCase()}</h2>
                   <h3>
                     {item.firstname} {item.lastname}

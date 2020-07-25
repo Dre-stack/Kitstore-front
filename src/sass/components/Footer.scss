@@ -1,4 +1,66 @@
 .footer {
   position: relative;
   top: 6rem;
+  padding: 4rem 6rem 1rem 6rem;
+  background-color: rgba(#f3f3f3, 0.6);
+  max-width: 112rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 1.4rem;
+
+  &-main {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    &-block {
+      &__header {
+        font-family: 'futuria-light', sans-serif;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+      }
+      & ul {
+        list-style: none;
+        & li {
+          text-transform: uppercase;
+          margin: 1rem 0;
+          & a {
+            text-decoration: none;
+            color: $brown-primary;
+            font-family: 'futuria-light', sans-serif;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-socials {
+    margin-bottom: 2rem;
+    & a {
+      color: $brown-primary;
+      margin: 0 1rem;
+      & i {
+        font-size: 2rem;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  &-form {
+    &-input {
+      width: 100%;
+      padding: 1rem 0.5rem;
+      border: 1px solid #dbdbdb;
+      margin-bottom: 1rem;
+      &::placeholder {
+        font-family: 'futuria-light', sans-serif;
+      }
+    }
+  }
 }
