@@ -1,5 +1,5 @@
 import React from 'react';
-import KIT2a from '../../img/KitNew.png';
+import KIT2a from '../../img/KitNew2.png';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { SignOut, getCartItemTotalCount } from '../../actions';
@@ -135,32 +135,33 @@ class Header extends React.Component {
             />
           </Link>
         </div>
-
-        <div className="header__profile">
-          <div className="header__search">
-            <input
-              className="header__search-input"
-              type="text"
-              placeholder="search"
-            />
+        <div className="right">
+          <div className="header__profile">
+            <div className="header__search">
+              <input
+                className="header__search-input"
+                type="text"
+                placeholder="search"
+              />
+            </div>
+            {this.renderProfile()}
           </div>
-          {this.renderProfile()}
-        </div>
-        <div className="header__nav-items">
-          <Link to="/user/cart">
-            <i className="fas fa-shopping-cart">
-              {' '}
-              <sup>{this.getTotalCartItems()}</sup>
-            </i>
-          </Link>
-        </div>
-        <div
-          className="header__hamburger"
-          onClick={() => this.setState({ mobileNav: true })}
-        >
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
+          <div className="header__nav-items">
+            <Link to="/user/cart">
+              <i className="fas fa-shopping-cart">
+                {' '}
+                <sup>{this.getTotalCartItems()}</sup>
+              </i>
+            </Link>
+          </div>
+          <div
+            className="header__hamburger"
+            onClick={() => this.setState({ mobileNav: true })}
+          >
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
         </div>
       </div>
     );

@@ -7,12 +7,16 @@
   display: flex;
   font-family: 'futuria-light', sans-serif;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 2rem 4rem;
   font-size: 1.4rem;
   color: black;
   align-items: center;
   transition: all 0.5s;
   z-index: 3;
+  & .right {
+    display: flex;
+    align-items: center;
+  }
   @include respond(phone) {
     height: 5rem;
     // background-color: #fff;
@@ -49,7 +53,7 @@
     align-items: center;
     padding: 7rem 2rem;
     transition: all 0.5s;
-    transform: translateX(90%);
+    transform: translateX(110%);
     &.open {
       transform: translateX(0);
     }
@@ -120,16 +124,17 @@
     }
   }
   &__logo {
-    width: 30rem;
+    width: 7rem;
+
     // background-color: #fff;
     @include respond(phone) {
-      width: 20rem;
+      width: 5rem;
     }
     // position: absolute;
     // left: 50%;
 
     &-image {
-      max-width: 100%;
+      width: 100%;
     }
   }
 }
