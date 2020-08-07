@@ -15,7 +15,7 @@ function OrderSummary({ subTotal, shipping }) {
       <div className="cart-sum">
         <div className="cart-total small">
           <h3>Sub-Total:</h3>
-          <h3>{subTotal}</h3>
+          <h3>${subTotal}</h3>
         </div>
         <div className="cart-total small">
           <h3>Shipping:</h3>
@@ -23,7 +23,7 @@ function OrderSummary({ subTotal, shipping }) {
         </div>
         <div className="cart-total">
           <h3>Total:</h3>
-          <h3>{orderTotal}</h3>
+          <h3>${orderTotal}</h3>
         </div>
       </div>
     </div>

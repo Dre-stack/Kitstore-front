@@ -56,7 +56,7 @@
         color: $red-primary;
         text-decoration: none;
         display: inline-block;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         transition: all 0.2s;
         &:hover {
           opacity: 0.7;
@@ -68,6 +68,7 @@
       padding: 1rem;
       border-radius: 1rem;
       background-color: transparent;
+      font-size: 1.6rem;
       &:focus {
         outline: rgba($brown-primary, 0.1);
       }

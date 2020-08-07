@@ -94,7 +94,7 @@ const Cart = ({ isSignedIn, user, addToCart }) => {
           <div className="cart-sum">
             <div className="cart-total">
               <h3>Total:</h3>
-              <h3>{cartTotal}</h3>
+              <h3>${cartTotal}</h3>
             </div>
             <div className="cart-actions">
               <Link to="/checkout" className="btn">

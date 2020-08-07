@@ -16,20 +16,18 @@ const Footer = () => {
       <div className="footer-main">
         <div className="footer-main-block">
           <h3 className="footer-main-block__header">Help</h3>
-          <ul clasName="fooer-main-block__item">
+          <ul className="footer-main-block__item">
             <li>
-              {' '}
               <Link to="##">Contact Us</Link>{' '}
             </li>
             <li>
-              {' '}
-              <Link to="##">Your Account</Link>{' '}
+              <Link to="/user/dashboard">Your Account</Link>{' '}
             </li>
           </ul>
         </div>
         <div className="footer-main-block">
           <h3 className="footer-main-block__header">About</h3>
-          <ul clasName="fooer-main-block__item">
+          <ul className="footer-main-block__item">
             <li>
               {' '}
               <Link to="##">Kit Records</Link>{' '}
@@ -44,7 +42,7 @@ const Footer = () => {
           <h3 className="footer-main-block__header">
             Sign up to receive exclusive deals
           </h3>
-          <div clasName="fooer-main-block__item">
+          <div className="footer-main-block__item">
             <form
               onSubmit={handleSubmit}
               className="form-wrapper footer-form"
@@ -68,16 +66,16 @@ const Footer = () => {
       </div>
       <div className="footer-socials">
         <Link to="##">
-          <i class="fab fa-instagram"></i>
+          <i className="fab fa-instagram"></i>
         </Link>
         <Link to="##">
-          <i class="fab fa-twitter"></i>
+          <i className="fab fa-twitter"></i>
         </Link>
         <Link to="##">
-          <i class="fab fa-facebook"></i>
+          <i className="fab fa-facebook"></i>
         </Link>
         <Link to="##">
-          <i class="fab fa-youtube"></i>
+          <i className="fab fa-youtube"></i>
         </Link>
       </div>
       <div className="footer-copyright">

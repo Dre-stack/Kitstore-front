@@ -1,10 +1,24 @@
+@import '../abstracts/mixins.scss';
+
 .cart {
   position: relative;
   top: 6rem;
   padding: 4rem 3rem;
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+  // background-color: red;
+  @include respond(tab-port) {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
   &-main {
-    max-width: 70vw;
+    width: 70%;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
   &__top {
     display: flex;
@@ -14,8 +28,15 @@
     text-transform: capitalize;
     padding-bottom: 2rem;
 
+    @include respond(tab-port) {
+      font-size: 1.2rem;
+    }
+
     &--left {
       width: 30%;
+      @include respond(tab-port) {
+        width: 20%;
+      }
     }
     &--right {
       display: grid;
@@ -23,6 +44,10 @@
       width: 70%;
       margin-left: 3rem;
       // justify-content: space-between;
+      @include respond(tab-port) {
+        width: 80%;
+        margin-left: 1rem;
+      }
     }
   }
   &-block {
@@ -51,12 +76,23 @@
     &__left {
       width: 30%;
       display: flex;
+      @include respond(tab-port) {
+        width: 20%;
+        flex-direction: column;
+      }
 
       &-image {
         background-color: #dbdbdb;
         margin-right: 2rem;
+        @include respond(tab-port) {
+          margin-right: 0.5rem;
+        }
         & img {
           width: 10rem;
+
+          @include respond(tab-port) {
+            width: 5rem;
+          }
         }
       }
     }
@@ -66,10 +102,17 @@
       grid-template-columns: repeat(5, 1fr);
       align-items: center;
       margin-left: 3rem;
+      @include respond(tab-port) {
+        width: 80%;
+        margin-left: 1rem;
+      }
       &-quantity {
         display: flex;
         max-width: 10rem;
         justify-content: flex-start;
+        @include respond(tab-port) {
+          max-width: 70%;
+        }
         // & > button {
         //   background: none;
         //   border: 1px solid #dbdbdb;
@@ -89,8 +132,14 @@
     width: 30vw;
     display: flex;
     flex-direction: column;
-    position: fixed;
-    right: 4rem;
+    position: relative;
+    // right: 4rem;
+    @include respond(tab-port) {
+      // width: 100vh;
+      position: relative;
+      width: 100%;
+      justify-content: center;
+    }
     // align-items: center;
   }
   &-total {
@@ -107,9 +156,19 @@
     align-items: center;
     justify-content: center;
     margin-top: 3rem;
+    @include respond(tab-port) {
+      // width: 100vh;
+      width: 100%;
+      justify-content: center;
+    }
 
     & .btn:first-child {
       margin-bottom: 2rem;
+      @include respond(tab-port) {
+        // width: 100vh;
+        position: sticky;
+        bottom: 0;
+      }
     }
   }
 

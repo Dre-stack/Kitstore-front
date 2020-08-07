@@ -3,7 +3,7 @@
 .dashboard {
   position: relative;
   top: 6rem;
-  height: 40rem;
+  // height: 40rem;
   display: flex;
   max-width: 100%;
   // justify-content: center;
@@ -13,7 +13,7 @@
   @include respond(tab-port) {
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
   }
   &-main {
     width: 80%;
@@ -97,6 +97,10 @@
     justify-items: center;
     padding: 1rem 0;
     border-bottom: 1px solid #dbdbdb;
+
+    @include respond(phone) {
+      font-size: 1.4rem;
+    }
   }
 
   &__block {
@@ -119,12 +123,22 @@
       &-image {
         width: 10rem;
         background-color: #f3f3f3;
+        @include respond(phone) {
+          width: 5rem;
+        }
         & img {
           width: 10rem;
+          @include respond(phone) {
+            width: 5rem;
+          }
         }
       }
       &-name {
         margin-left: 2rem;
+        @include respond(phone) {
+          margin-left: 0.5rem;
+          font-size: 1.4rem;
+        }
       }
     }
   }

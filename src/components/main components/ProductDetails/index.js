@@ -158,7 +158,6 @@ export class ProductDetails extends Component {
             {this.renderAddtoCartButton()}
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

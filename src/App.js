@@ -34,13 +34,19 @@ import Footer from './components/main components/Footer';
 class App extends React.Component {
   componentDidMount() {
     this.props.loadUser();
+    var docWidth = document.documentElement.offsetWidth;
+    [].forEach.call(document.querySelectorAll('*'), function (el) {
+      if (el.offsetWidth > docWidth) {
+        console.log(el);
+      }
+    });
   }
 
   render() {
     return (
-      <div className="app-wrapper">
+      <div>
         <Router history={history}>
-          <div>
+          <div className="app-wrapper">
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/signin" exact component={Signin} />

@@ -1,7 +1,8 @@
+@import '../abstracts/mixins.scss';
 .checkout {
   position: relative;
   top: 6rem;
-  max-width: 120rem;
+  max-width: 100%;
   font-size: 1.6rem;
   display: flex;
   flex-direction: column;
@@ -32,13 +33,23 @@
     padding: 3rem 3rem;
     font-size: 2rem;
     margin-left: 4rem;
+    // background-color: red;
+    @include respond(tab-port) {
+      flex-direction: column;
+      padding: 1rem;
+    }
 
     &-order-summary {
       padding: 4rem 5rem;
     }
 
     &-form {
-      width: 60%;
+      width: 100%;
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
+
       &__top {
         display: flex;
         justify-content: space-around;
@@ -66,12 +77,21 @@
         // justify-content: center;
         &--namefield {
           display: flex;
+          @include respond(tab-port) {
+            flex-direction: column;
+          }
         }
         &--actions {
           width: 100%;
           display: flex;
           justify-content: space-between;
           padding: 0 4rem;
+          @include respond(tab-port) {
+            padding: 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
         }
         &-input {
           width: 100%;
