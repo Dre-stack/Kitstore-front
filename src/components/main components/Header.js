@@ -1,11 +1,11 @@
 import React from 'react';
-import KIT2a from '../../img/newlogo.JPG';
+import KIT2a from '../../img/KitNew.png';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { SignOut, getCartItemTotalCount } from '../../actions';
 
 class Header extends React.Component {
-  state = { className: '', cart: null };
+  state = { className: '', cart: null, mobileNav: false };
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
@@ -43,20 +43,40 @@ class Header extends React.Component {
     // }
   };
 
+  renderMobileNav = () => {
+    if (!this.props.isSignedIn) {
+      return (
+        <React.Fragment>
+          <li className="header__nav-items header__mobile-nav-item">
+            <Link to="/signin">Sign In</Link>
+          </li>
+          <li className="header__nav-items header__mobile-nav-item">
+            <Link to="/signup">Sign Up</Link>
+          </li>
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <li className="header__nav-items header__mobile-nav-item">
+            <Link to="/user/dashboard">My Dashboard</Link>
+          </li>
+          <li className="header__nav-items header__mobile-nav-item">
+            <Link to="/" onClick={() => this.onSignout()}>
+              SignOut
+            </Link>
+          </li>
+        </React.Fragment>
+      );
+    }
+  };
+
   renderProfile = () => {
     if (!this.props.isSignedIn) {
       return (
         <ul className="header__profile-items ">
           <li className="header__nav-items">
             <Link to="/signin">Sign In</Link>
-          </li>
-          <li className="header__nav-items">
-            <Link to="/user/cart">
-              <i className="fas fa-shopping-cart">
-                {' '}
-                <sup>{this.getTotalCartItems()}</sup>
-              </i>
-            </Link>
           </li>
         </ul>
       );
@@ -68,19 +88,11 @@ class Header extends React.Component {
               SignOut
             </Link>
           </li>
+
           <li className="header__nav-items">
-            <Link to="/user/cart">
-              <i className="fas fa-shopping-cart">
-                <sup className="header__cart-number">
-                  {this.getTotalCartItems()}
-                </sup>
-              </i>
-            </Link>
-          </li>
-          <li className="header__nav-items">
-            <a href="/user/dashboard">
+            <Link to="/user/dashboard">
               <i className="far fa-user-circle"></i>
-            </a>
+            </Link>
           </li>
         </ul>
       );
@@ -92,23 +104,28 @@ class Header extends React.Component {
         className={`header ${this.state.className}`}
         style={{ backgroundColor: this.props.bgColor }}
       >
-        <ul className="header__nav">
-          <li className="header__nav-items">
-            <Link to="/shop">Thrending</Link>
-          </li>
-          <li className="header__nav-items">
-            <Link to="/shop">men</Link>
-          </li>
-          <li className="header__nav-items">
-            <Link to="/shop">women</Link>
-          </li>
-          <li className="header__nav-items">
-            <Link to="/shop">kids</Link>
-          </li>
-          <li className="header__nav-items">
-            <Link to="/shop">jewellery</Link>
-          </li>
-        </ul>
+        <div
+          className={
+            this.state.mobileNav
+              ? 'header__mobile-nav open'
+              : 'header__mobile-nav'
+          }
+        >
+          <div>
+            <i
+              onClick={() => this.setState({ mobileNav: false })}
+              className="fas fa-times fa-2x header__nav-items close"
+            ></i>
+          </div>
+          <div className="header__search">
+            <input
+              className="header__search-input"
+              type="text"
+              placeholder="search"
+            />
+          </div>
+          <ul className="">{this.renderMobileNav()}</ul>
+        </div>
         <div className="header__logo">
           <Link to="/">
             <img
@@ -128,6 +145,22 @@ class Header extends React.Component {
             />
           </div>
           {this.renderProfile()}
+        </div>
+        <div className="header__nav-items">
+          <Link to="/user/cart">
+            <i className="fas fa-shopping-cart">
+              {' '}
+              <sup>{this.getTotalCartItems()}</sup>
+            </i>
+          </Link>
+        </div>
+        <div
+          className="header__hamburger"
+          onClick={() => this.setState({ mobileNav: true })}
+        >
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
       </div>
     );

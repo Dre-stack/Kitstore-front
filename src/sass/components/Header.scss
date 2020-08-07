@@ -1,6 +1,8 @@
+@import '../abstracts/mixins.scss';
+
 .header {
   width: 100vw;
-  height: 6rem;
+  height: 8rem;
   position: fixed;
   display: flex;
   font-family: 'futuria-light', sans-serif;
@@ -11,11 +13,60 @@
   align-items: center;
   transition: all 0.5s;
   z-index: 3;
+  @include respond(phone) {
+    height: 5rem;
+    // background-color: #fff;
+  }
   &:hover {
     background-color: white;
   }
   &.white {
     background-color: white;
+  }
+
+  &__hamburger {
+    display: none;
+    @include respond(phone) {
+      display: block;
+    }
+    & .line {
+      background-color: $brown-primary;
+      height: 0.3rem;
+      width: 3rem;
+      margin: 0.5rem;
+    }
+  }
+
+  &__mobile-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 70vw;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7rem 2rem;
+    transition: all 0.5s;
+    transform: translateX(90%);
+    &.open {
+      transform: translateX(0);
+    }
+
+    .close {
+      position: absolute;
+      top: 0.5rem;
+      right: 80%;
+    }
+
+    & ul {
+      list-style: none;
+    }
+    &-item {
+      margin-top: 3rem;
+      // background-color: red;
+    }
   }
 
   &__nav {
@@ -41,6 +92,9 @@
   }
   &__profile {
     display: flex;
+    @include respond(phone) {
+      display: none;
+    }
     &-items {
       display: flex;
       list-style-type: none;
@@ -66,12 +120,16 @@
     }
   }
   &__logo {
-    height: 4rem;
-    position: absolute;
-    left: 50%;
+    width: 30rem;
+    // background-color: #fff;
+    @include respond(phone) {
+      width: 20rem;
+    }
+    // position: absolute;
+    // left: 50%;
 
     &-image {
-      height: 100%;
+      max-width: 100%;
     }
   }
 }

@@ -14,7 +14,6 @@ export const createCategory = async (name) => {
 };
 
 export const createProduct = async (data) => {
-  console.log(data.photo);
   try {
     const response = await axios.post(
       `${API}/products/new`,
