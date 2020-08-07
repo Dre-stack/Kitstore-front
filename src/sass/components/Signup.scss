@@ -1,7 +1,9 @@
 @import '../abstracts/mixins.scss';
 
 .signup {
-  max-width: 112rem;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
   padding: 4rem;
   position: relative;
   top: 6rem;

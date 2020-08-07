@@ -45,7 +45,6 @@ class Home extends React.Component {
         <Showcase />
         {this.renderNewArivals()}
         {this.renderBestSelling()}
-        <Footer />
       </div>
     );
   }

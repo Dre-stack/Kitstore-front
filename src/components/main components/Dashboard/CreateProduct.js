@@ -225,20 +225,22 @@ function CreateProduct({ user, history, handleSubmit }) {
   };
 
   return (
-    <DashboardLayout>
-      <DashboardHeader title="Create New Product" />
-      <div className="full-width">
-        <Loader render={loading} />
-        {success ? (
-          renderSuccess()
-        ) : (
-          <React.Fragment>
-            {renderError()}
-            {renderForm()}
-          </React.Fragment>
-        )}
-      </div>
-    </DashboardLayout>
+    <div>
+      <DashboardLayout>
+        <DashboardHeader title="Create New Product" />
+        <div className="full-width">
+          <Loader render={loading} />
+          {success ? (
+            renderSuccess()
+          ) : (
+            <React.Fragment>
+              {renderError()}
+              {renderForm()}
+            </React.Fragment>
+          )}
+        </div>
+      </DashboardLayout>
+    </div>
   );
 }
 

@@ -86,9 +86,9 @@ const UpdateUser = ({ user, loadUser, history }) => {
     const { lastname, firstname, photo } = data;
     if (user) {
       return (
-        <div className="user-profile">
-          <form onSubmit={handleSubmit} className="form-wrapper">
-            <label className="form-label full-width m1rem">
+        <div className="user-profile half-width center-contents">
+          <form onSubmit={handleSubmit} className="form-wrapper ">
+            <label className="form-label full-width m1rem ">
               First Name
             </label>
             <input
@@ -97,6 +97,7 @@ const UpdateUser = ({ user, loadUser, history }) => {
               defaultValue={firstname}
               onChange={(e) => handleChange(e)}
               type="text"
+              required
             />
             <label className="form-label full-width m1rem">
               Last Name
@@ -107,6 +108,7 @@ const UpdateUser = ({ user, loadUser, history }) => {
               defaultValue={lastname}
               onChange={(e) => handleChange(e)}
               type="text"
+              required
             />
             <label className="form-label full-width m1rem">
               User Image

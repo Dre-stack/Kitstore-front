@@ -29,6 +29,7 @@ import OrdersAdmin from './components/main components/Dashboard/OrdersAdmin';
 import CreateAccount from './components/main components/CreateAcount';
 import ForgotPassword from './components/main components/ForgotPassword';
 import ResetPassword from './components/main components/ResetPassword';
+import Footer from './components/main components/Footer';
 
 class App extends React.Component {
   componentDidMount() {
@@ -126,6 +127,7 @@ class App extends React.Component {
                 component={OrdersAdmin}
               />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </div>

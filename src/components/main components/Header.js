@@ -51,7 +51,7 @@ class Header extends React.Component {
             <Link to="/signin">Sign In</Link>
           </li>
           <li className="header__nav-items header__mobile-nav-item">
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/user/register">Sign Up</Link>
           </li>
         </React.Fragment>
       );

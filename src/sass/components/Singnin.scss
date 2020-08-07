@@ -1,3 +1,5 @@
+@import '../abstracts/mixins.scss';
+
 .signin {
   position: relative;
   top: 6rem;
@@ -9,6 +11,12 @@
   align-items: center;
   justify-content: center;
   font-family: 'proxima-nova', Arial, Helvetica, sans-serif;
+  @include respond(tab-port) {
+    padding: 3rem;
+  }
+  @include respond(phone) {
+    padding: 1rem;
+  }
 
   &__form-wrapper {
     width: 60%;
@@ -20,6 +28,13 @@
     justify-content: center;
     border-radius: 2rem;
     box-shadow: -3px 1px 5px 8px rgba(0, 0, 0, 0.1);
+
+    @include respond(tab-port) {
+      width: 90%;
+    }
+    @include respond(phone) {
+      width: 100%;
+    }
 
     h1 {
       font-size: 3rem;

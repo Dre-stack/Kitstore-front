@@ -101,7 +101,7 @@ class Shop extends React.Component {
         <div className="shop">
           <div className="shop-filters">
             <ShowCheckbox
-              initstate={true}
+              initstate={false}
               title="Categories"
               list={products.categories}
               handleFilters={(filters) =>
@@ -109,7 +109,7 @@ class Shop extends React.Component {
               }
             />
             <ShowRadioGroup
-              initstate={true}
+              initstate={false}
               title="Price"
               list={price}
               handleFilters={(filters) =>

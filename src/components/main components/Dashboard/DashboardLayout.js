@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header';
-import Footer from '../Footer';
+// import Footer from '../Footer';
 import PageTop from '../../utils/PageTop';
 import { connect } from 'react-redux';
 import DashboardNav from './DashboardNav';
