@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import DashboardLayout from './DashboardLayout';
 import { connect } from 'react-redux';
 import DashboardHeader from './DashboardHeader';
@@ -12,9 +12,9 @@ const renderInput = ({
   type,
   meta: { error, touched },
 }) => {
-  const className = `signin__form-input ${
-    error && touched ? 'error' : ''
-  } `;
+  // const className = `signin__form-input ${
+  //   error && touched ? 'error' : ''
+  // } `;
   return (
     <React.Fragment>
       <label className="form-label full-width">{label}</label>

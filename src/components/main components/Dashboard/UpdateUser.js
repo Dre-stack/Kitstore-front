@@ -10,7 +10,7 @@ const UpdateUser = ({ user, loadUser, history }) => {
     lastname: '',
     photo: null,
   });
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [error, setError] = useState({
     errMsg: '',
     errStatus: false,
@@ -69,7 +69,7 @@ const UpdateUser = ({ user, loadUser, history }) => {
       .then((data) => {
         setError({ ...error, errMsg: '', errStatus: false });
         setSuccess(true);
-        setLoading(false);
+        // setLoading(false);
         loadUser();
         setTimeout(() => history.push('/user/dashboard'), 2000);
       })
@@ -78,7 +78,7 @@ const UpdateUser = ({ user, loadUser, history }) => {
           errStatus: true,
           errMsg: err.response.data.message,
         });
-        setLoading(false);
+        // setLoading(false);
       });
   };
 

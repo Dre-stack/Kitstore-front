@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import DashboardLayout from './DashboardLayout';
 import { connect } from 'react-redux';
 import emptyimg from '../../../img/Empty.jpeg';
@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { profilePictureFromServer } from '../../utils/apiLinks';
 
 const DashBoard = ({ user }) => {
-
   const renderUserInfo = () => {
     if (user) {
       return (

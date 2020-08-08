@@ -11,7 +11,6 @@ import Loader from '../../utils/Loader';
 // import signinSubmit from '../utils/signinSubmit';
 
 import Header from '../Header';
-import { Link } from 'react-router-dom';
 
 const renderInput = ({
   input,

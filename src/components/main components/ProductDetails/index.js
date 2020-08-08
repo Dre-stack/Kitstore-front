@@ -7,7 +7,6 @@ import {
   getCartItemTotalCount,
 } from '../../../actions';
 import Header from '../Header';
-import Footer from '../Footer';
 import { addCartToLocalStorage } from '../../utils/cartHelpers';
 import ProductImage from './ProductImage';
 import { Link } from 'react-router-dom';

@@ -1,14 +1,14 @@
 import React, {
-  useLocation,
-  useHistory,
-  useEffect,
+  // useLocation,
+  // useHistory,
+  // useEffect,
   useState,
 } from 'react';
 import Header from '../Header';
 import PageTop from '../../utils/PageTop';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+
 import { signUp } from '../../../actions';
 
 const renderInput = ({
@@ -17,9 +17,9 @@ const renderInput = ({
   type,
   meta: { error, touched },
 }) => {
-  const className = `signin__form-input ${
-    error && touched ? 'error' : ''
-  } `;
+  // const className = `signin__form-input ${
+  //   error && touched ? 'error' : ''
+  // } `;
   return (
     <React.Fragment>
       <label className="form-label full-width">{label}</label>

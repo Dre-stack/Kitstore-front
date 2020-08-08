@@ -1,7 +1,10 @@
+@import '../abstracts/mixins.scss';
 .showcase {
   position: relative;
   width: 100%;
+
   // z-index: -1;
+
   &__cta {
     position: absolute;
     top: 50%;

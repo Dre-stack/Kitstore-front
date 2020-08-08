@@ -9,11 +9,9 @@ import {
 } from '../../actions';
 
 import Header from './Header';
-import Footer from './Footer';
 
 class Home extends React.Component {
   componentDidMount() {
-    let isMounted;
     this.props.getProductByArrival();
     this.props.getProductBySold();
   }
@@ -40,7 +38,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="home">
         <Header />
         <Showcase />
         {this.renderNewArivals()}

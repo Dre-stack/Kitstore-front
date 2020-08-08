@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import DashboardLayout from './DashboardLayout';
 import { connect } from 'react-redux';
 import DashboardHeader from './DashboardHeader';

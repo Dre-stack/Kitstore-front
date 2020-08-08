@@ -110,7 +110,7 @@ const Checkout = ({
   const renderDropIn = () => {
     if (auth.braintreeToken) {
       return (
-        <div>
+        <div className="dropin">
           <DropIn
             options={{
               authorization: auth.braintreeToken,
@@ -134,7 +134,7 @@ const Checkout = ({
     return (
       <div className="checkout-success">
         <div className="checkout-success__message">
-          Thank You, your payment has been processed succesfully .🤩{' '}
+          Thank You, your payment has been processed succesfully .{' '}
           <br /> You will receive an email shortly containing updates
           about your order
         </div>
