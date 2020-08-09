@@ -72,7 +72,7 @@ const ForgotPassword = ({ isSignedIn, handleSubmit, submitting }) => {
   };
 
   const onSubmit = (values) => {
-    forgotPassword(values)
+    forgotPassword(values.toLowerCase())
       .then((data) => {
         setError({ ...error, errMsg: '', errStatus: false });
         setSuccess(true);

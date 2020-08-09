@@ -52,7 +52,11 @@ const Signin = ({
 
   const onSubmit = (values) => {
     // setloading(true);
-    return signIN(values, from.pathname);
+    const data = {
+      ...values,
+      email: values.email.toLowerCase().trim(),
+    };
+    return signIN(data, from.pathname);
     // } catch (err) {
     //   // setloading(false);
     //   // if (err.response) {
