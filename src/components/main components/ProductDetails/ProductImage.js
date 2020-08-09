@@ -22,14 +22,14 @@ const ProductImage = ({ product }) => {
           <ReactImageMagnify
             {...{
               smallImage: {
-                alt: 'Wristwatch by Ted Baker London',
+                alt: `${source}`,
                 isFluidWidth: true,
                 src: source,
               },
               largeImage: {
                 src: source,
                 width: 1200,
-                height: 1200,
+                height: 1800,
               },
               // enlargedImagePosition: 'over',
               imageClassName: 'product__images-image--small',

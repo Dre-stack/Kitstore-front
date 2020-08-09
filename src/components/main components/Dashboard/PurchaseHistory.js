@@ -5,6 +5,7 @@ import { getUserOrderHistory } from '../../../actions';
 import { pictureFromServer } from '../../utils/apiLinks';
 import moment from 'moment';
 import DashboardHeader from './DashboardHeader';
+import { Link } from 'react-router-dom';
 
 function PurchaseHistory({ userHistory, user, getUserOrderHistory }) {
   useEffect(() => {
@@ -32,7 +33,7 @@ function PurchaseHistory({ userHistory, user, getUserOrderHistory }) {
   };
 
   const renderHistoryBlocks = () => {
-    if (userHistory) {
+    if (userHistory && userHistory.length > 0) {
       return userHistory.map((item, i) => (
         <div className="purchase-history__block-item" key={i}>
           <div>{renderProducts(item.products)}</div>
@@ -42,6 +43,19 @@ function PurchaseHistory({ userHistory, user, getUserOrderHistory }) {
           <div>{`${item.status}`}</div>
         </div>
       ));
+    } else {
+      return (
+        <div className="full-width center-contents m1rem">
+          <div className="message-wrapper">
+            You have not bought any item yet
+          </div>
+
+          <Link className="btn " to="/shop">
+            {' '}
+            Shop Now
+          </Link>
+        </div>
+      );
     }
   };
 

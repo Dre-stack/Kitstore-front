@@ -3,7 +3,8 @@ import ShopCard from './ShopCard';
 
 function ShopCardList({ list }) {
   const renderCards = () => {
-    if (list) {
+    if (list && list.length > 0) {
+      console.log(list.length);
       return list.map((product) => (
         <ShopCard
           key={product._id}
@@ -14,6 +15,13 @@ function ShopCardList({ list }) {
           className="shop-products__list-card"
         />
       ));
+    } else if (list && list.length === 0) {
+      console.log(list.length);
+      return (
+        <div className="message-wrapper">
+          No products in that category, Please try another category
+        </div>
+      );
     }
   };
   return <div className="shop-products__list">{renderCards()}</div>;

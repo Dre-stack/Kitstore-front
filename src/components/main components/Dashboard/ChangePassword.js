@@ -38,11 +38,11 @@ const ChangePassword = ({
   history,
   SignOut,
 }) => {
-  const [data, setData] = useState({
-    currentPassword: '',
-    password: '',
-    confirmPassword: '',
-  });
+  // const [data, setData] = useState({
+  //   currentPassword: '',
+  //   password: '',
+  //   confirmPassword: '',
+  // });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({
     errMsg: '',

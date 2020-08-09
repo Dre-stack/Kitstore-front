@@ -80,7 +80,7 @@ function CreateAcount({ isSignedIn, error, handleSubmit, signUp }) {
       lastname,
     };
     const formData = {
-      email,
+      email: email.toLowerCase().trim(),
       password,
       confirmPassword,
       firstname,
@@ -186,12 +186,22 @@ function CreateAcount({ isSignedIn, error, handleSubmit, signUp }) {
 }
 
 const validate = (formValues) => {
+  const emailRx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const errors = {};
   if (!formValues.email) {
     errors.email = 'Please enter your email';
   }
+  if (
+    formValues.email &&
+    !emailRx.test(formValues.email.toLowerCase())
+  ) {
+    errors.email = 'Please enter a valid email';
+  }
   if (!formValues.password) {
     errors.password = 'Please enter your password';
+  }
+  if (formValues.password && formValues.password.length < 6) {
+    errors.password = 'Password must be at least 6 characters';
   }
   if (!formValues.confirmPassword) {
     errors.confirmPassword = 'Please confirm your password';

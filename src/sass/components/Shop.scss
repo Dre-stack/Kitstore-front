@@ -16,10 +16,10 @@
     border-right: 1px solid #dbdbdb;
     padding: 0 1rem;
     width: 20%;
-    display: flex;
     // z-index: 1;
     @include respond(tab-port) {
       width: 100%;
+      display: flex;
       // align-items: center;
     }
   }
