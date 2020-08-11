@@ -72,7 +72,8 @@ const ForgotPassword = ({ isSignedIn, handleSubmit, submitting }) => {
   };
 
   const onSubmit = (values) => {
-    forgotPassword(values.toLowerCase())
+    const data = { email: values.email.toLowerCase() };
+    forgotPassword(data)
       .then((data) => {
         setError({ ...error, errMsg: '', errStatus: false });
         setSuccess(true);
